@@ -81,3 +81,11 @@ watchdog==6.0.0
 weasel==1.0.0
 websockets==16.1.1
 wrapt==2.2.2
+
+streamlit
+pandas
+plotly
+PyMuPDF
+python-docx
+scikit-learn
+reportlab
