@@ -40,7 +40,7 @@ with st.sidebar:
     st.write("✅ ATS Score")
     st.write("✅ AI Suggestions")
     st.divider()
-    st.caption("Version 1.0")
+    st.caption("Version 1.1")
 
 st.title("📄 AI Resume Analyzer")
 st.write("Upload your resume and compare it with a Job Description.")
