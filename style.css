@@ -1,0 +1,25 @@
+.main {
+    background-color: #0E1117;
+}
+
+.stApp {
+    background-color: #0E1117;
+}
+
+.metric-card {
+    background-color: #1E1E2F;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #30363D;
+}
+
+h1,h2,h3{
+    color:white;
+}
+
+div[data-testid="stMetric"]{
+    background-color:#1E1E2F;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #444;
+}
