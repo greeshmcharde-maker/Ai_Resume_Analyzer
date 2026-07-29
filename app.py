@@ -38,7 +38,7 @@ with st.sidebar:
     st.write("✅ PDF & DOCX Reader")
     st.write("✅ Resume Parser")
     st.write("✅ ATS Score")
-    st.write("🚧 AI Suggestions")
+    st.write("✅ AI Suggestions")
     st.divider()
     st.caption("Version 1.0")
 
