@@ -4,13 +4,31 @@ footer {visibility:hidden;}
 header {visibility:hidden;}
 
 .stApp{
-    background:#0E1117;
-    color:white;
+
+background:
+linear-gradient(
+135deg,
+#0F172A,
+#111827,
+#1E293B,
+#0F172A);
+
+background-size:400% 400%;
+
+animation:gradientBG 15s ease infinite;
+
+color:white;
+
 }
 
-
 section[data-testid="stSidebar"]{
-    background:#161B22;
+
+background:rgba(20,20,20,.35);
+
+backdrop-filter:blur(30px);
+
+border-right:1px solid rgba(255,255,255,.08);
+
 }
 
 
@@ -26,10 +44,35 @@ h2,h3{
 }
 
 
-[data-testid="stFileUploader"]{
-    border:2px dashed #00D4FF;
-    border-radius:15px;
-    padding:20px;
+[data-testid="metric-container"]{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+
+-webkit-backdrop-filter:blur(25px);
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,.18);
+
+box-shadow:
+
+0 8px 32px rgba(0,0,0,.35);
+
+padding:20px;
+
+transition:.4s;
+
+}
+
+[data-testid="metric-container"]:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 15px 40px rgba(0,212,255,.35);
+
 }
 
 
@@ -59,6 +102,22 @@ h2,h3{
     border-radius:18px;
 
     padding:20px;
+
+@keyframes gradientBG{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
 
     border:1px solid #30363D;
 
