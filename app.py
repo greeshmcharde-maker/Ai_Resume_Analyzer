@@ -147,11 +147,15 @@ if resume is not None:
 
     c1, c2, c3, c4, c5 = st.columns(5)
 
-    c1.metric("Resume Score", f"{resume_score}/100")
-    c2.metric("ATS Score", f"{ats_score:.1f}%" if ats_score is not None else "--")
-    c3.metric("Skills", len(skills))
-    c4.metric("Email", "✔" if email != "Not Found" else "✖")
-    c5.metric("Phone", "✔" if phone != "Not Found" else "✖")
+    c1.metric("📄 Resume Score", f"{resume_score}/100")
+
+    c2.metric("🎯 ATS Score", f"{ats_score:.1f}%")
+    
+    c3.metric("🛠 Skills", len(skills))
+    
+    c4.metric("📧 Email", "✔" if email != "Not Found" else "✖")
+    
+    c5.metric("📱 Phone", "✔" if phone != "Not Found" else "✖")
 
     st.divider()
 
