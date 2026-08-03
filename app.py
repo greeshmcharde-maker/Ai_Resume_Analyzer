@@ -320,17 +320,40 @@ if resume is not None:
     st.header("🛠 Detected Skills")
 
     if skills:
-        cols = st.columns(3)
-        for i, skill in enumerate(skills):
-            cols[i % 3].success(skill)
-
-        fig = px.bar(
-            x=skills,
-            y=[1] * len(skills),
-            labels={"x": "Skill", "y": "Detected"},
-            title="Detected Skills"
+    
+        st.markdown(
+            """
+            <style>
+            .skill-chip{
+                display:inline-block;
+                padding:10px 18px;
+                margin:8px;
+                border-radius:25px;
+                background:rgba(255,255,255,0.08);
+                border:1px solid rgba(255,255,255,0.15);
+                backdrop-filter:blur(15px);
+                color:white;
+                font-weight:600;
+                transition:0.3s;
+            }
+    
+            .skill-chip:hover{
+                transform:scale(1.08);
+                border:1px solid #00D4FF;
+                box-shadow:0 0 15px rgba(0,212,255,.35);
+            }
+            </style>
+            """,
+            unsafe_allow_html=True,
         )
-        st.plotly_chart(fig, use_container_width=True)
+    
+        chips = ""
+    
+        for skill in skills:
+            chips += f'<span class="skill-chip">⚡ {skill}</span>'
+    
+        st.markdown(chips, unsafe_allow_html=True)
+    
     else:
         st.warning("No skills detected.")
 
