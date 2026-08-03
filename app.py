@@ -32,26 +32,64 @@ def load_css():
 load_css()
 
 with st.sidebar:
-    st.title("📄 AI Resume Analyzer")
-    st.write("### Features")
-    st.write("✅ Resume Upload")
-    st.write("✅ PDF & DOCX Reader")
-    st.write("✅ Resume Parser")
-    st.write("✅ ATS Score")
-    st.write("✅ AI Suggestions")
-    st.divider()
-    st.caption("Version 1.1")
 
-st.title("📄 AI Resume Analyzer")
+    st.image(
+        "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        width=120
+    )
+
+    st.title("AI Resume Analyzer")
+
+    st.markdown("---")
+
+    st.success("✔ Resume Parsing")
+
+    st.success("✔ ATS Analysis")
+
+    st.success("✔ Skill Matching")
+
+    st.success("✔ Resume Score")
+
+    st.success("✔ AI Suggestions")
+
+    st.success("✔ PDF Report")
+
+    st.markdown("---")
+
+    st.info("Version 2.0")
+
+st.markdown("""
+<h1>
+🚀 AI Resume Analyzer
+</h1>
+
+<p style='text-align:center;
+font-size:22px;
+color:#B3B3B3;'>
+
+Analyze your resume with ATS scoring,
+skill matching and intelligent feedback.
+
+</p>
+
+""",unsafe_allow_html=True)
 st.write("Upload your resume and compare it with a Job Description.")
 
-resume = st.file_uploader("Upload Resume", type=["pdf", "docx"])
+left, right = st.columns(2)
 
-job_description = st.text_area(
-    "📋 Paste Job Description",
-    height=220,
-    placeholder="Paste the job description here..."
-)
+with left:
+
+    resume = st.file_uploader(
+        "📤 Upload Resume",
+        type=["pdf", "docx"]
+    )
+
+with right:
+
+    job_description = st.text_area(
+        "📋 Job Description",
+        height=220
+    )
 
 if resume is not None:
 
