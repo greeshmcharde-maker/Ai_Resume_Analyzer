@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
-from ui.glass import glass_card
+
 from modules.pdf_reader import extract_pdf_text
 from modules.docx_reader import extract_docx_text
 from modules.resume_parser import (
@@ -204,52 +204,38 @@ if resume is not None:
 
     st.success("Resume Uploaded Successfully!")
 
-    st.markdown("""
-    <div class="glass-title">
-    📊 Dashboard
-    </div>
-    """, unsafe_allow_html=True)
+    st.subheader("📊 Dashboard")
 
-    left, right = st.columns(2)
-
-    with left:
+    row1_col1, row1_col2 = st.columns(2)
     
-        glass_card(
-            "📄",
-            "Resume Score",
-            f"{resume_score}/100",
-            "Overall Resume Quality"
+    with row1_col1:
+        st.metric(
+            label="📄 Resume Score",
+            value=f"{resume_score}/100"
         )
     
-    with right:
-    
-        glass_card(
-            "🎯",
-            "ATS Score",
-            f"{ats_score:.1f}%" if ats_score is not None else "--",
-            "Job Match Score"
+    with row1_col2:
+        st.metric(
+            label="🎯 ATS Score",
+            value=f"{ats_score:.1f}%" if ats_score is not None else "--"
         )
     
-    left, right = st.columns(2)
+    row2_col1, row2_col2 = st.columns(2)
     
-    with left:
-    
-        glass_card(
-            "🛠",
-            "Skills",
-            len(skills),
-            "Skills Detected"
+    with row2_col1:
+        st.metric(
+            label="🛠 Skills",
+            value=len(skills)
         )
     
-    with right:
-    
-        glass_card(
-            "📧",
-            "Email & Phone",
-            "✔ Verified",
-            "Contact Information"
+    with row2_col2:
+        contact_status = "✔ Verified" if email != "Not Found" and phone != "Not Found" else "⚠ Incomplete"
+        st.metric(
+            label="📧 Contact",
+            value=contact_status
         )
 
+    
     st.divider()
 
     if ats_score is not None:
