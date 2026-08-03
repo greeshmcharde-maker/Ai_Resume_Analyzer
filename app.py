@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
+from ui.glass import glass_card
 from modules.pdf_reader import extract_pdf_text
 from modules.docx_reader import extract_docx_text
 from modules.resume_parser import (
