@@ -1,10 +1,7 @@
-/* Hide Streamlit elements */
 
 #MainMenu {visibility:hidden;}
 footer {visibility:hidden;}
-header {visibility:hidden;}
 
-/* Background */
 
 .stApp{
 
@@ -172,7 +169,6 @@ transform:scale(1.03);
 
 }
 
-/* Glass Section Title */
 
 .glass-title{
 
