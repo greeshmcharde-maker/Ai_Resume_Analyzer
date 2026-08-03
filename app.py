@@ -149,7 +149,10 @@ if resume is not None:
 
     c1.metric("📄 Resume Score", f"{resume_score}/100")
 
-    c2.metric("🎯 ATS Score", f"{ats_score:.1f}%")
+    c2.metric(
+    "🎯 ATS Score",
+    f"{ats_score:.1f}%" if ats_score is not None else "--"
+    )
     
     c3.metric("🛠 Skills", len(skills))
     
