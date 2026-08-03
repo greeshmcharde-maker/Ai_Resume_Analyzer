@@ -139,7 +139,11 @@ if resume is not None:
 
     st.success("Resume Uploaded Successfully!")
 
-    st.header("📊 Dashboard")
+    st.markdown("""
+    <div class="glass-title">
+    📊 Dashboard
+    </div>
+    """, unsafe_allow_html=True)
 
     c1, c2, c3, c4, c5 = st.columns(5)
 
