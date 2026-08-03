@@ -239,19 +239,69 @@ if resume is not None:
     st.divider()
 
     if ats_score is not None:
+
         gauge = go.Figure(go.Indicator(
+    
             mode="gauge+number",
+    
             value=ats_score,
-            title={"text": "ATS Score"},
-            gauge={
-                "axis": {"range": [0, 100]},
-                "steps": [
-                    {"range": [0, 50], "color": "#ffb3b3"},
-                    {"range": [50, 75], "color": "#ffe599"},
-                    {"range": [75, 100], "color": "#b6fcb6"},
-                ],
+    
+            number={
+                "suffix": "%",
+                "font": {"size": 46}
             },
+    
+            title={
+                "text": "<b>ATS Score</b>",
+                "font": {"size": 26}
+            },
+    
+            gauge={
+    
+                "axis": {
+                    "range": [0, 100],
+                    "tickwidth": 1,
+                    "tickcolor": "white"
+                },
+    
+                "bar": {
+                    "color": "#00D4FF"
+                },
+    
+                "bgcolor": "rgba(0,0,0,0)",
+    
+                "borderwidth": 0,
+    
+                "steps": [
+    
+                    {"range": [0, 40], "color": "#E74C3C"},
+    
+                    {"range": [40, 70], "color": "#F39C12"},
+    
+                    {"range": [70, 90], "color": "#3498DB"},
+    
+                    {"range": [90, 100], "color": "#2ECC71"}
+    
+                ]
+    
+            }
+    
         ))
+    
+        gauge.update_layout(
+    
+            height=420,
+    
+            paper_bgcolor="rgba(0,0,0,0)",
+    
+            plot_bgcolor="rgba(0,0,0,0)",
+    
+            font_color="white",
+    
+            margin=dict(l=20, r=20, t=50, b=20)
+    
+        )
+    
         st.plotly_chart(gauge, use_container_width=True)
 
     st.header("📋 Contact Information")
