@@ -1,20 +1,19 @@
-/* Hide Streamlit Menu */
+
 #MainMenu {visibility:hidden;}
 footer {visibility:hidden;}
 header {visibility:hidden;}
 
-/* Main App */
 .stApp{
     background:#0E1117;
     color:white;
 }
 
-/* Sidebar */
+
 section[data-testid="stSidebar"]{
     background:#161B22;
 }
 
-/* Title */
+
 h1{
     color:#00D4FF;
     text-align:center;
@@ -26,14 +25,14 @@ h2,h3{
     color:white;
 }
 
-/* Upload Box */
+
 [data-testid="stFileUploader"]{
     border:2px dashed #00D4FF;
     border-radius:15px;
     padding:20px;
 }
 
-/* Buttons */
+
 .stButton>button{
 
     width:100%;
@@ -51,7 +50,7 @@ h2,h3{
     color:white;
 }
 
-/* Metric Cards */
+
 
 [data-testid="metric-container"]{
 
