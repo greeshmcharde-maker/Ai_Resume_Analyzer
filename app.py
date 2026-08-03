@@ -59,23 +59,87 @@ with st.sidebar:
     st.info("Version 2.0")
 
 st.markdown("""
-<h1>
+<div style="
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(25px);
+-webkit-backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:30px;
+padding:40px;
+margin-bottom:35px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+">
+
+<h1 style="
+color:#00D4FF;
+font-size:60px;
+margin-bottom:10px;
+">
+
 🚀 AI Resume Analyzer
+
 </h1>
 
-<p style='text-align:center;
+<p style="
 font-size:22px;
-color:#B3B3B3;'>
+color:#D1D5DB;
+margin-bottom:20px;
+">
 
-Analyze your resume with ATS scoring,
-skill matching and intelligent feedback.
+Smart ATS Resume Evaluation Platform
 
 </p>
 
-""",unsafe_allow_html=True)
-st.write("Upload your resume and compare it with a Job Description.")
+<div style="
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+">
 
-left, right = st.columns(2)
+<span style="
+padding:10px 18px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+">
+📄 Resume Parsing
+</span>
+
+<span style="
+padding:10px 18px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+">
+🎯 ATS Analysis
+</span>
+
+<span style="
+padding:10px 18px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+">
+🤖 AI Feedback
+</span>
+
+<span style="
+padding:10px 18px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+">
+📊 Skill Matching
+</span>
+
+</div>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.info(
+    "👋 Welcome! Upload your resume and paste a job description to receive an ATS score, skill analysis, and personalized feedback."
+)
+
+left, right = st.columns([1,1], gap="large")
 
 with left:
 
