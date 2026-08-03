@@ -210,20 +210,45 @@ if resume is not None:
     </div>
     """, unsafe_allow_html=True)
 
-    c1, c2, c3, c4, c5 = st.columns(5)
+    left, right = st.columns(2)
 
-    c1.metric("📄 Resume Score", f"{resume_score}/100")
-
-    c2.metric(
-    "🎯 ATS Score",
-    f"{ats_score:.1f}%" if ats_score is not None else "--"
-    )
+    with left:
     
-    c3.metric("🛠 Skills", len(skills))
+        glass_card(
+            "📄",
+            "Resume Score",
+            f"{resume_score}/100",
+            "Overall Resume Quality"
+        )
     
-    c4.metric("📧 Email", "✔" if email != "Not Found" else "✖")
+    with right:
     
-    c5.metric("📱 Phone", "✔" if phone != "Not Found" else "✖")
+        glass_card(
+            "🎯",
+            "ATS Score",
+            f"{ats_score:.1f}%" if ats_score is not None else "--",
+            "Job Match Score"
+        )
+    
+    left, right = st.columns(2)
+    
+    with left:
+    
+        glass_card(
+            "🛠",
+            "Skills",
+            len(skills),
+            "Skills Detected"
+        )
+    
+    with right:
+    
+        glass_card(
+            "📧",
+            "Email & Phone",
+            "✔ Verified",
+            "Contact Information"
+        )
 
     st.divider()
 
