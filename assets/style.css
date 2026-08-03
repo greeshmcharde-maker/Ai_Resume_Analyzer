@@ -197,3 +197,26 @@ transform:scale(1.03);
     box-shadow:0 8px 20px rgba(0,0,0,.25);
 
 }
+/* KPI Card Numbers */
+
+[data-testid="stMetricValue"]{
+
+    color:#00D4FF;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+/* KPI Labels */
+
+[data-testid="stMetricLabel"]{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
